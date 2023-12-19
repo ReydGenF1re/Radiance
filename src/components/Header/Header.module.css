@@ -1,0 +1,81 @@
+.header {
+    grid-area: header;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #343A4033;
+
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:25px;
+
+}
+
+.logo {
+    position: relative;
+    margin-right: auto;
+}
+.login{
+    color:#F08550;
+    font-weight: 600;
+    transition: color .2s ease;
+}
+.login:hover{
+    color: #dc1111;
+}
+.logoutButton{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: contain;
+    background-image: url('../../assets/images/logout.png')
+}
+.loginBlock a{
+    color: #EDBC30;
+    transition: color .2s ease;
+}
+.loginBlock a:hover{
+    color: #dc1111;
+}
+
+.form {
+    position: relative;
+}
+
+.form__input {
+    background-color: #fff;
+    padding: 11px 58px 11px 11px;
+    font-size: 24px;
+    max-width: 212px;
+    vertical-align: middle;
+    color: #343A40;
+    border: 2px solid #EDBC30;
+    border-radius: 7px;
+}
+
+.form__input:active,
+.form__input:hover,
+.form__input:focus {
+    border: 2px solid #DC6B11;
+    outline: none;
+}
+
+.form__btn {
+    position: absolute;
+    background-image: url('../../assets/icons/search.svg');
+    background-size: contain;
+    width: 42px;
+    height: 42px;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+    right: 7px;
+    top: 7px;
+}

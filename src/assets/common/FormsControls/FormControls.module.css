@@ -1,0 +1,18 @@
+.errorText {
+    position: absolute;
+    top: -55%;
+    background-color: red;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+}
+.summaryError{
+    background-color: red;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+}

@@ -1,0 +1,56 @@
+.friend {
+    background: linear-gradient(220deg, #EDBC30, #DC6B11);
+    border-radius: 22px;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+}
+.friend__inner{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.friend__left{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+.friend__avatar{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.friend__name{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 5px;
+}
+.friend__status{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+.friend__right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+}
+.friend__follow_btn{
+    color:#fff;
+    font-size: 27px;
+    line-height: 34px;
+    font-weight: 600;
+    background-color: #DC6B11;
+    border-radius: 22px;
+    padding: 15px 25px;
+    min-width: 170px;
+    margin-bottom: 7px;
+}
+.friend__followers{
+    font-size: 26px;
+    font-weight: 600;
+}

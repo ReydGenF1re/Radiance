@@ -1,0 +1,50 @@
+
+.section__title{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+section{
+    margin-bottom: 50px;
+}
+.newPost{
+    height: 84px;
+    position: relative;
+
+}
+.post__ava{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+.post__input{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 22px;
+    border: 2px solid #EDBC30;
+    padding: 10px 80px 10px 94px;
+    /*background-color: #D9D9D9;*/
+    color:#343A40;
+    outline: none;
+    box-shadow: 2px 4px 4px rgba(220, 107, 17, 0.2);
+    text-align: left;
+}
+.post__btn{
+    position: absolute;
+    background-image: url('../../../assets/icons/send.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 40px;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+    right: 20px;
+    top: 22px;
+}

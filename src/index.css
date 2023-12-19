@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    font-size: 24px;
+    color: #343A40;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.appWrapper {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 10fr 2fr;
+    grid-template-areas: "header header header"
+    "main main nav";
+}
+
+.main {
+    position: relative;
+    grid-area: main;
+    max-width: 85%;
+    padding-top: 5%;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #EDBC30;
+}

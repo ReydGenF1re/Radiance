@@ -1,0 +1,115 @@
+.user{
+    max-height: 400px;
+}
+
+.user__background{
+    width: 100%;
+    height: 270px;
+    border-radius: 22px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+}
+.user__profile{
+    position: relative;
+    top: -97px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user__profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user__about{
+    position: relative;
+    top: -140px;
+    left: 175px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.user__ava img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+
+}
+.user__name{
+    font-weight: 700;
+    font-size: 48px;
+}
+.user__status{
+    max-width: calc(100% - 260px);
+}
+.section__title{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #DC6B11;
+}
+.about{
+    font-size: 20px;
+    line-height: 27px;
+}
+section{
+    margin-bottom: 50px;
+}
+.newPost{
+    height: 84px;
+    position: relative;
+}
+.post__ava{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+.post__input{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 22px;
+    border: 2px solid #EDBC30;
+    padding: 10px 10px 10px 94px;
+    color:#343A40;
+    outline: none;
+
+}
+.post__btn{
+    position: absolute;
+    background-image: url('../../../assets/icons/send.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 40px;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+    right: 20px;
+    top: 22px;
+}
+.status, .status:active,.status:focus{
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    padding: 5px;
+    background-color: #EDBC30;
+    width: 100%;
+}
+.statusBlock{
+    max-width: calc(100% - 220px);
+    word-wrap: break-word;
+    line-height: 22px;
+}
+.statusBlock span{
+    font-style: italic;
+    font-size: 22px;
+}
