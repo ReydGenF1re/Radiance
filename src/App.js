@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
 import Navbar from "./components/Navbar/Navbar";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import {Component} from "react";
 import {connect, Provider} from "react-redux";
@@ -45,9 +45,9 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized,
 })
 const AppContainer = connect(mapStateToProps, {initializeApp})(App);
-const MainApp = () => <BrowserRouter>
+const MainApp = () => <HashRouter>
     <Provider store={store}>
         <AppContainer/>
     </Provider>
-</BrowserRouter>
+</HashRouter>
 export default MainApp
