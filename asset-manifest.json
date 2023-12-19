@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Radiance/static/css/main.16ace165.css",
-    "main.js": "/Radiance/static/js/main.ba372629.js",
+    "main.js": "/Radiance/static/js/main.879b6bae.js",
     "static/css/294.faa8c6da.chunk.css": "/Radiance/static/css/294.faa8c6da.chunk.css",
     "static/js/294.175d464a.chunk.js": "/Radiance/static/js/294.175d464a.chunk.js",
     "static/css/342.018c654c.chunk.css": "/Radiance/static/css/342.018c654c.chunk.css",
@@ -21,7 +21,7 @@
     "static/media/send.svg": "/Radiance/static/media/send.c4c45ce1c79f031f8cf1.svg",
     "index.html": "/Radiance/index.html",
     "main.16ace165.css.map": "/Radiance/static/css/main.16ace165.css.map",
-    "main.ba372629.js.map": "/Radiance/static/js/main.ba372629.js.map",
+    "main.879b6bae.js.map": "/Radiance/static/js/main.879b6bae.js.map",
     "294.faa8c6da.chunk.css.map": "/Radiance/static/css/294.faa8c6da.chunk.css.map",
     "294.175d464a.chunk.js.map": "/Radiance/static/js/294.175d464a.chunk.js.map",
     "342.018c654c.chunk.css.map": "/Radiance/static/css/342.018c654c.chunk.css.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.16ace165.css",
-    "static/js/main.ba372629.js"
+    "static/js/main.879b6bae.js"
   ]
 }
