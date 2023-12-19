@@ -6,7 +6,7 @@ export default function Header({isAuth, login,logout}) {
     return <header className={styles.header}>
         <div className="container">
             <div className={styles.header__inner}>
-                <img className={styles.logo} src="../logo.svg" alt="Logo"/>
+                <img className={styles.logo} src="../../assets/images/logo.svg" alt="Logo"/>
                 {isAuth
                     ? <><button onClick={logout} className={styles.logoutButton}></button> <NavLink className={styles.login} to={'/profile'}>{login}</NavLink>
                     </>
