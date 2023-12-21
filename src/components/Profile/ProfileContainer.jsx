@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getStatus, getUserProfile, setUserProfile, updateStatus} from "../../redux/profile-reducer";
+import {getStatus, getUserProfile, savePhoto, setUserProfile, updateStatus} from "../../redux/profile-reducer";
 import {
     useLocation,
     useNavigate,
@@ -29,25 +29,34 @@ function withRouter(Component) {
 }
 
 class ProfileContainer extends React.Component {
-    componentDidMount() {
+    refreshProfile() {
         let userID = this.props.router.params.userID;
-        if(!userID) {
+        if (!userID) {
             userID = this.props.authorizedUserID;
-            if(!userID){
+            if (!userID) {
                 this.props.router.navigate('/login/')
             }
 
         }
-        userID && this.props.getUserProfile(userID) ;
+        userID && this.props.getUserProfile(userID);
         userID && this.props.getStatus(userID)
 
+    }
+
+    componentDidMount() {
+        this.refreshProfile();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.router.params.userID !== prevProps.router.params.userID) this.refreshProfile();
     }
 
     render() {
         return <>{
             this.props.isFetching ?
                 <Preloader/> :
-                <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}/>
+                <Profile isOwner={!this.props.router.params.userID} {...this.props} profile={this.props.profile}
+                         status={this.props.status} updateStatus={this.props.updateStatus} savePhoto={this.props.savePhoto}/>
         }
         </>
     }
@@ -57,8 +66,8 @@ const mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     isFetching: state.profilePage.isFetching,
-    authorizedUserID:state.auth.userID,
-    isAuth:state.auth.isAuth
+    authorizedUserID: state.auth.userID,
+    isAuth: state.auth.isAuth
 })
 
 export default compose(
@@ -66,7 +75,8 @@ export default compose(
         setUserProfile,
         getUserProfile,
         getStatus,
-        updateStatus
+        updateStatus,
+        savePhoto
     }),
     withRouter,
 )(ProfileContainer)
