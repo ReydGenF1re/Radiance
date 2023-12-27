@@ -1,4 +1,4 @@
-const SEND_MESSAGE = "SEND-MESSAGE";
+const SEND_MESSAGE = "radiance-network/messages/SEND-MESSAGE";
 
 const initialState = {
     messages: [

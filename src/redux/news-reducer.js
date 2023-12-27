@@ -1,7 +1,7 @@
-const UPDATE_NEWS_BODY = 'UPDATE-NEWS-BODY';
-const UPDATE_NEWS_TITLE = 'UPDATE-NEWS-TITLE'
-const UPDATE_NEWS_HIGHLIGHT = 'UPDATE-NEWS-HIGHLIGHT'
-const ADD_NEWS_POST = 'ADD-NEWS-POST';
+const UPDATE_NEWS_BODY = 'radiance-network/news/UPDATE-NEWS-BODY';
+const UPDATE_NEWS_TITLE = 'radiance-network/news/UPDATE-NEWS-TITLE'
+const UPDATE_NEWS_HIGHLIGHT = 'radiance-network/news/UPDATE-NEWS-HIGHLIGHT'
+const ADD_NEWS_POST = 'radiance-network/news/ADD-NEWS-POST';
 
 const initialState = {
     news: [

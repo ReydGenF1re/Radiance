@@ -1,9 +1,6 @@
 import React from "react";
 import styles from "./FormControls.module.css"
 import {Field} from "redux-form";
-import {required} from "../../../utilities/validators/validators";
-
-
 
 export const Input = ({input,meta:{touched,error}, ...props}) => {
     const hasError = error && touched
@@ -13,10 +10,10 @@ export const Input = ({input,meta:{touched,error}, ...props}) => {
     </>
 
 }
-export const CreateField = ({children, id, name, type, validators=[]}) => {
+export const CreateField = ({children, id, name, type, validators=[],classForLabel=null}) => {
     return <>
         <Field type={type} id={id} validate={validators} component={Input} name={name}/>
-        <label htmlFor={id}>
+        <label className={classForLabel} htmlFor={id}>
             {children}
         </label></>
 }

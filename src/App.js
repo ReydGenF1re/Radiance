@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
 import Navbar from "./components/Navbar/Navbar";
-import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, HashRouter, Navigate, Route, Routes} from "react-router-dom";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import {Component} from "react";
 import {connect, Provider} from "react-redux";
@@ -15,8 +15,15 @@ const MessagesContainer = React.lazy(() => import("./components/Messages/Message
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 class App extends Component {
+    catchAllUnhandledError = (promiseRejectionEvent) => {
+        alert(promiseRejectionEvent);
+    }
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledError)
+    }
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledError);
     }
 
     render() {
@@ -27,11 +34,13 @@ class App extends Component {
                 <main className="main">
                     <Suspense fallback={<Preloader/>}>
                         <Routes>
+                            <Route path="/" element={<Navigate to="/profile" />} />
                             <Route path="/profile/:userID?" element={<ProfileContainer/>}/>
                             <Route path="/messages/*" element={<MessagesContainer/>}/>
                             <Route path="/news" element={<NewsContainer/>}/>
                             <Route path="/friends" element={<FriendsContainer/>}/>
                             <Route path="/login" element={<LoginPage/>}/>
+                            <Route path="*" element={<div className="notFound">404: NOT FOUND</div>}/>
                         </Routes>
                     </Suspense>
 

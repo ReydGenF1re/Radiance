@@ -39,11 +39,18 @@ button {
     max-width: 85%;
     padding-top: 5%;
 }
-
+.notFound{
+    font-size: 64px;
+    text-align: center;
+    color:#DC6B11;
+}
 body::-webkit-scrollbar {
     width: 10px;
 }
 
 body::-webkit-scrollbar-thumb {
     background-color: #EDBC30;
+}
+input:-webkit-autofill {
+    transition: all 5000s ease-in-out 0s;
 }

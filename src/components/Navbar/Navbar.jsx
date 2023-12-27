@@ -1,8 +1,7 @@
 import React from "react";
 import styles from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
-// const links = ['Home',"News", 'Messages', 'Friends', "Community", "Bookmarks", ]
-export default function Navbar(props) {
+export default function Navbar() {
     return <nav className={styles.nav}>
         <ul className={styles.nav__list}>
             <li className={styles.nav__item}>

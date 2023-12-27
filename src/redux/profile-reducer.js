@@ -1,12 +1,13 @@
 import {profileAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 
-const ADD_POST = "ADD-POST";
-const SET_USER_PROFILE = "SET-USER-PROFILE"
-const TOGGLE_FETCHING = "TOGGLE-FETCHING"
-const SET_STATUS = "SET-STATUS";
-const DELETE_POST = "DELETE-POST";
-const SAVE_PHOTO_SUCCESS = "SAVE-PHOTO-SUCCESS";
+const ADD_POST = "radiance-network/profile/ADD-POST";
+const SET_USER_PROFILE = "radiance-network/profile/SET-USER-PROFILE"
+const TOGGLE_FETCHING = "radiance-network/profile/TOGGLE-FETCHING"
+const SET_STATUS = "radiance-network/profile/SET-STATUS";
+const DELETE_POST = "radiance-network/profile/DELETE-POST";
+const SAVE_PHOTO_SUCCESS = "radiance-network/profile/SAVE-PHOTO-SUCCESS";
 
 
 const initialState = {
@@ -68,7 +69,7 @@ export const deletePost = (postID) => ({type: DELETE_POST, postID})
 export const toggleFetching = (isFetching) => ({type: TOGGLE_FETCHING, isFetching})
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
-export const savePhotoSuccess = (photos) => ({type:SAVE_PHOTO_SUCCESS,photos})
+export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos})
 
 
 export const getUserProfile = (userID) => async (dispatch) => {
@@ -89,8 +90,17 @@ export const updateStatus = (status) => async (dispatch) => {
 }
 export const savePhoto = file => async (dispatch) => {
     const data = await profileAPI.savePhoto(file);
-    if(data.resultCode === 0){
+    if (data.resultCode === 0) {
         dispatch(savePhotoSuccess(data.data.photos))
+    }
+}
+export const saveProfile = profile => async (dispatch, getState) => {
+    const userID = getState().auth.userID;
+    const data = await profileAPI.saveProfile(profile);
+    if (data.resultCode === 0) {
+        dispatch(getUserProfile(userID))
+    } else {
+        dispatch(stopSubmit('EditProfile', {_error: data.messages[0]}))
     }
 }
 

@@ -1,7 +1,7 @@
 
 .loginBox {
     position: absolute;
-    top: 70%;
+    top: 100%;
     left: 50%;
     width: 500px;
     padding: 40px;
@@ -67,7 +67,7 @@ form {
     position: relative;
 }
 
-.loginBox .userBox input[type="checkbox"]:before {
+.loginBox .userBox input[type="checkbox"]::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -78,17 +78,22 @@ form {
     background-color: #ffffff;
     transition: background-color .3s ease;
 
-}.loginBox .userBox input[type="checkbox"]:checked:before{
+}.loginBox .userBox input[type="checkbox"]:checked::before{
      background-image: url("data:image/png;base64,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");
      background-size: contain;
  }
-input:-webkit-autofill {
-    transition: all 5000s ease-in-out 0s;
-}
+
 .loginBox .userBox input[type="checkbox"] ~ label {
     position: static;
     pointer-events: auto;
     font-size: 22px;
+}
+.loginBox input[name="captcha"]{
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #DC6B11;
+    border:none;
+    outline: none;
 }
 
 .loginBox form button {

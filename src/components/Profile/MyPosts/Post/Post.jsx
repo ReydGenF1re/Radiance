@@ -1,11 +1,11 @@
 import React from "react";
 import styles from './Post.module.css';
 
-export default function Post({name, date, message, likes, comments, shares}) {
+export default function Post({name, date, message, likes, comments, shares,profile}) {
     return (
         <article className={styles.post}>
             <div className={styles.post__user}>
-                <img className={styles.post__ava} src='https://cdn.mos.cms.futurecdn.net/wadCYrEXA7JKngzFMgECzh-1200-80.jpg' alt="Avatar"/>
+                <img className={styles.post__ava} src={profile?.photos.large || 'https://cdn.mos.cms.futurecdn.net/wadCYrEXA7JKngzFMgECzh-1200-80.jpg'} alt="Avatar"/>
                 <div className={styles.post__userDescr}>
                     <span className={styles.post__username}>{name}</span><br/>
                     <span className={styles.post__time}>{date}</span>

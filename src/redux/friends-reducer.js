@@ -1,13 +1,13 @@
 import {friendsAPI} from "../api/api";
 import {updateObjectInArray} from "../utilities/helpers/object-helpers";
 
-const FOLLOW = "FOLLOW";
-const UNFOLLOW = "UNFOLLOW";
-const SET_FRIENDS = "SET-FRIENDS";
-const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
-const SET_TOTAL_FRIENDS_COUNT = "SET-TOTAL-FRIENDS-COUNT";
-const TOGGLE_FETCHING = "TOGGLE-FETCHING"
-const TOGGLE_FOLLOWING = "TOGGLE-FOLLOWING"
+const FOLLOW = "radiance-network/friends/FOLLOW";
+const UNFOLLOW = "radiance-network/friends/UNFOLLOW";
+const SET_FRIENDS = "radiance-network/friends/SET-FRIENDS";
+const SET_CURRENT_PAGE = "radiance-network/friends/SET-CURRENT-PAGE";
+const SET_TOTAL_FRIENDS_COUNT = "radiance-network/friends/SET-TOTAL-FRIENDS-COUNT";
+const TOGGLE_FETCHING = "radiance-network/friends/TOGGLE-FETCHING"
+const TOGGLE_FOLLOWING = "radiance-network/friends/TOGGLE-FOLLOWING"
 const initialState = {
     friends: [],
     pageSize: 6,
